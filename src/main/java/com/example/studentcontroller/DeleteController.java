@@ -13,7 +13,7 @@ public class DeleteController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // ✅ Correct parameter name: rollNo (same as in JSP)
+        
         String rollNoStr = request.getParameter("rollNo");
 
         if (rollNoStr != null && !rollNoStr.isEmpty()) {
@@ -31,7 +31,7 @@ public class DeleteController extends HttpServlet {
                 ps.executeUpdate();
                 con.close();
 
-                // Redirect back to student list after deletion
+                
                 response.sendRedirect("StudentController");
 
             } catch (Exception e) {
